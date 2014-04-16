@@ -5,7 +5,7 @@ module Riif::DSL
       :trnstype,
       :date,
       :accnt,
-      :accnum
+      :accnum,
       :name,
       :class,
       :amount,
