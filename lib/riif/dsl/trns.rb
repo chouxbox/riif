@@ -37,8 +37,8 @@ module Riif::DSL
 
     def headers
       [
-        ["!#{START_COLUMN}"].concat(HEADER_COLUMNS.map! { |x| x.upcase == 'KLASS' ? 'CLASS' : x.upcase }),
-        ["!SPL"].concat(Spl::HEADER_COLUMNS.map! { |x| x.upcase == 'KLASS' ? 'CLASS' : x.upcase }),
+        ["!#{START_COLUMN}"].concat(HEADER_COLUMNS.map! { |x| x.upcase == 'KLASS' ? 'CLASS' : x }),
+        ["!SPL"].concat(Spl::HEADER_COLUMNS.map! { |x| x.upcase == 'KLASS' ? 'CLASS' : x }),
         ["!#{END_COLUMN}"]
       ]
     end
