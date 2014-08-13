@@ -37,24 +37,11 @@ module Riif::DSL
 
     def headers
       [
-        ["!#{START_COLUMN}"].concat(HEADER_COLUMNS.upcase_if_not_klass),
-        ["!SPL"].concat(Spl::HEADER_COLUMNS.upcase_if_not_klass),
+        ["!#{START_COLUMN}"].concat(HEADER_COLUMNS.map! { |x| x == 'klass' ? 'CLASS' : x.upcase }),
+        ["!SPL"].concat(Spl::HEADER_COLUMNS.map! { |x| x == 'klass' ? 'CLASS' : x.upcase }),
         ["!#{END_COLUMN}"]
       ]
     end
-
-    def upcase_if_not_klass(header_columns)
-      labels = []
-      header_columns.each do |h|
-        if h != 'klass'
-          labels.concat(h.upcase)
-        else
-          labels.concat('CLASS')
-        end
-      end
-      labels
-    end
-
 
     def rows
       @rows << [END_COLUMN]
