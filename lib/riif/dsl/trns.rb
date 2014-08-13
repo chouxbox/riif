@@ -6,7 +6,7 @@ module Riif::DSL
       :date,
       :accnt,
       :name,
-      :class,
+      :klass,
       :amount,
       :docnum,
       :memo,
