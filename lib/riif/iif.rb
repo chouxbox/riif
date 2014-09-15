@@ -35,7 +35,7 @@ module Riif
     end
 
     def output
-      CSV.generate(col_sep: "\t") do |tsv|
+      CSV.generate(col_sep: "\t", force_quotes: true) do |tsv|
 
         @output.each do |_, list|
           list[:headers].uniq.each do |header|
